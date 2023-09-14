@@ -69,6 +69,9 @@ class productController extends Controller
     public function edit($id)
     {
         //
+        $producttfind = product::findOrFail($id);
+        return view('editproduct',['product'=>$producttfind]);
+        
     }
 
     /**
@@ -82,7 +85,12 @@ class productController extends Controller
     {
         //
         $productfind = product::findOrFail($id);
-        return view('edit', ['product' => $productfind]);
+        $productfind -> firstname = $request -> firstname;
+        $productfind -> lastname = $request -> lastname;
+        $productfind -> address = $request -> address;
+        $productfind -> tp = $request -> tp;
+        $productfind -> save();
+        return redirect('student/'.$productfind->id.'/edit')->with('status','updated!');
     }
 
     /**

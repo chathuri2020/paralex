@@ -5,6 +5,7 @@ use App\Http\Controllers\categoryController;
 use App\Http\Controllers\categoryfetch;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\sendcategory;
+use App\Http\Controllers\sendeditproduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::resource('category',App\Http\Controllers\categoryController::class);
 Route::resource('product',App\Http\Controllers\productController::class);
 
 Route::get('addnewproduct', [sendcategory::class, 'index']);
+Route::get('editproduct', [sendeditproduct::class, 'index']);

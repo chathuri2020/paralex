@@ -21,7 +21,7 @@
 <th>Product Name</th>
 <th>Price</th>
 <th>Category</th>
-<th>&nbsp; &nb</th>
+<th>&nbsp; </th>
 </tr>
 @foreach($products as $product)
 <tr>
@@ -32,7 +32,7 @@
 
 <td>
 <div class="row"><div class="col">
-<a href="{{url('product/'.$product->product_id.'/edit')}}"><button class="btn btn-small blue">Edit</button></a>
+<a href="{{url('product/'.$product->id.'/edit')}}"><button class="btn btn-small blue">Edit</button></a>
 </div>
 <div class="col">
 <form method="POST" action="{{route('product.destroy',$product->id)}}">
